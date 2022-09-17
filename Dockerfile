@@ -1,15 +1,15 @@
 FROM python:3-alpine as builder
-ARG VERSION
+ARG TAG_VERSION
 WORKDIR /app
 
 
 RUN apk add --no-cache alpine-sdk libffi-dev
-RUN pip install --user radicale[bcrypt]==${VERSION}
+RUN pip install --user radicale[bcrypt]==$TAG_VERSION
 
 
 FROM python:3-alpine
-ARG VERSION
-LABEL build_version="Version:- ${VERSION}"
+ARG TAG_VERSION
+LABEL build_version="Version:- ${TAG_VERSION}"
 LABEL maintainer="newargus"
 
 RUN apk add --no-cache apache2-utils
