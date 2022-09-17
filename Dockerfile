@@ -4,7 +4,7 @@ WORKDIR /app
 
 
 RUN apk add --no-cache alpine-sdk libffi-dev
-RUN pip install --user radicale[bcrypt]==${$VERSION}
+RUN pip install --user radicale[bcrypt]==${VERSION}
 
 
 FROM python:3-alpine
