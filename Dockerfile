@@ -4,6 +4,7 @@ WORKDIR /app
 
 
 RUN apk add --no-cache alpine-sdk libffi-dev
+RUN pip install --upgrade pip
 RUN pip install --user radicale[bcrypt]==$TAG_VERSION
 
 
