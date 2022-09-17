@@ -1,4 +1,9 @@
-name: ci
+---
+# The following secrets are required to push the images.
+# DOCKERHUB_USERNAME
+# DOCKERHUB_TOKEN
+
+name: Publish to DockerHub
 
 on:
   push:
