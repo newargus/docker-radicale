@@ -3,7 +3,7 @@ ARG TAG_VERSION
 WORKDIR /app
 
 
-RUN apk add --no-cache alpine-sdk libffi-dev
+RUN apk add --no-cache alpine-sdk libffi-dev rust
 RUN pip install --upgrade pip
 RUN pip install --user radicale[bcrypt]==$TAG_VERSION
 
