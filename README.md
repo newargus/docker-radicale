@@ -2,9 +2,22 @@
 
 This is a small docker image for [Radicale](https://github.com/Kozea/Radicale) and easy deployment. Bcrypt authentication inclusive.
 
-![Docker Pulls](https://img.shields.io/docker/pulls/cupcakearmy/radicale?style=flat-square)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/cupcakearmy/radicale/latest?style=flat-square)
-![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/cupcakearmy/radicale/latest?style=flat-square)
+This repo is a fork of cupcakearmy work (https://github.com/cupcakearmy/docker-radicale)
+
+![Docker Pulls](https://img.shields.io/docker/pulls/newargus/radicale?style=flat-square)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/newargus/radicale/latest?style=flat-square)
+![Docker Image Version (tag latest semver)](https://img.shields.io/docker/v/newargus/radicale/latest?style=flat-square)
+
+### Why these image:
+
+A self-made image for testing prupose, to learn CI github process.
+
+## Architectures
+
+* [x] `arm/v6`
+* [x] `arm/v7`
+* [x] `arm64`
+* [x] `amd64`
 
 ## Installation
 
@@ -20,7 +33,7 @@ version: '3.8'
 
 services:
   app:
-    image: cupcakearmy/radicale:1
+    image: newargus/radicale
     restart: unless-stopped
     env_file: .env
     volumes:
@@ -52,7 +65,7 @@ networks:
 
 services:
   app:
-    image: cupcakearmy/radicale:1
+    image: newargus/radicale
     restart: unless-stopped
     env_file: .env
     volumes:

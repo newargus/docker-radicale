@@ -1,14 +1,16 @@
 FROM python:3-alpine as builder
-
+ARG VERSION
 WORKDIR /app
 
-ARG RADICALE_VERSION=3.1.7
 
 RUN apk add --no-cache alpine-sdk libffi-dev
-RUN pip install --user radicale[bcrypt]==$RADICALE_VERSION
+RUN pip install --user radicale[bcrypt]==$VERSION
 
 
 FROM python:3-alpine
+ARG VERSION
+LABEL build_version="Version:- ${VERSION}"
+LABEL maintainer="newargus"
 
 RUN apk add --no-cache apache2-utils
 
@@ -17,7 +19,7 @@ ENV PATH=/root/.local:$PATH
 
 WORKDIR /app
 
-COPY ./config /etc/radicale/config
+COPY ./config/config /etc/radicale/config
 COPY ./entrypoint.sh .
 
 ENV USER_FILE=/data/users
